@@ -58,7 +58,7 @@ Func SetName($_StrName) ;This one is also probably gonna need an update with nex
 	$Level2Ptr = NtReadVirtualMemory($pHandle, $Level1Ptr + 0x4FC,"int")
 	$Level3Ptr = NtReadVirtualMemory($pHandle, $Level2Ptr + 0x0,"int")
 	$Level4Ptr = NtReadVirtualMemory($pHandle, $Level3Ptr + 0x28,"int")
-	$FinalLevelPtr = NtWriteVirtualMemory($pHandle, $Level4Ptr + 0x0, $_StrName,"char[200]")
+	NtWriteVirtualMemory($pHandle, $Level4Ptr + 0x0, $_StrName,"char[200]")
 EndFunc
 
 Func CoutStyle1($___Str)
