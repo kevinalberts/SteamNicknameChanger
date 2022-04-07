@@ -2,7 +2,7 @@
 #Include <Console.au3>
 #Include <NtProcess2.au3>
 
-Global $scanEntityList, $findBaseAddy, $foundBaseAddy, $dwBaseAddy, $strSelectedNickname
+Global $scanBaseAddy, $findBaseAddy, $foundBaseAddy, $dwBaseAddy, $strSelectedNickname
 Global $Steam = "Steam.exe"
 Global $Steamclient = "Steamclient.dll"
 
