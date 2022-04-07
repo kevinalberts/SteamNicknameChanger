@@ -36,7 +36,7 @@ Func _SetConsoleTitle($cTitle)
     DllCall("Kernel32.dll", "BOOL", "SetConsoleTitle", "str", $cTitle)
 EndFunc
 
-Func Find()
+Func Find() ;This probably gonna need an update with next steam update!
 	$scanBaseAddy = FindPattern($pHandle, "8B15........8B0D........433BD97C8C",false,$pmHandle) ; 8B 15 ?? ?? ?? ?? 8B 0D ?? ?? ?? ?? 43 3B D9 7C 8C
 	$findBaseAddy = "0x" & Hex($scanBaseAddy + 0x2,8)
 	$foundBaseAddy = "0x" & Hex(NtReadVirtualMemory($pHandle,$findBaseAddy,"dword"),8)
@@ -44,7 +44,7 @@ Func Find()
 	Return $dwBaseAddy
 EndFunc
 
-Func GetName()
+Func GetName() ;This one is also probably gonna need an update with next steam update!
 	$Level1Ptr = NtReadVirtualMemory($pHandle, $pmHandle + Find(),"int")
 	$Level2Ptr = NtReadVirtualMemory($pHandle, $Level1Ptr + 0x4FC,"int")
 	$Level3Ptr = NtReadVirtualMemory($pHandle, $Level2Ptr + 0x0,"int")
@@ -53,7 +53,7 @@ Func GetName()
 	Return $FinalLevelPtr
 EndFunc
 
-Func SetName($_StrName)
+Func SetName($_StrName) ;This one is also probably gonna need an update with next steam update!
 	$Level1Ptr = NtReadVirtualMemory($pHandle, $pmHandle + Find(),"int")
 	$Level2Ptr = NtReadVirtualMemory($pHandle, $Level1Ptr + 0x4FC,"int")
 	$Level3Ptr = NtReadVirtualMemory($pHandle, $Level2Ptr + 0x0,"int")
