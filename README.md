@@ -8,7 +8,8 @@ Run steam as normal instead of admin. So if it runs 32bit steam, then it may wor
 https://streamable.com/b5cmjw
 
 # Update
-First offset which is 0x4FC changed to 0x52C
+First offset which is 0x4FC, 0x52C changed to 0x55C 
+Latest update: 28.07.2022
 
 # Note
 Since most of the people don't know how to update, i'll keep the project updated for a while.
