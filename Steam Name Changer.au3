@@ -46,7 +46,7 @@ EndFunc
 
 Func GetName() ;This one is also probably gonna need an update with next steam update!
 	$Level1Ptr = NtReadVirtualMemory($pHandle, $pmHandle + Find(),"int")
-	$Level2Ptr = NtReadVirtualMemory($pHandle, $Level1Ptr + 0x58C,"int") ;old offset was 4FC, 52C, 55C now it's 58C
+	$Level2Ptr = NtReadVirtualMemory($pHandle, $Level1Ptr + 0x61C,"int") ;old offset was 4FC, 52C, 55C ... now it's 61C
 	$Level3Ptr = NtReadVirtualMemory($pHandle, $Level2Ptr + 0x0,"int")
 	$Level4Ptr = NtReadVirtualMemory($pHandle, $Level3Ptr + 0x28,"int")
 	$FinalLevelPtr = NtReadVirtualMemory($pHandle, $Level4Ptr + 0x0,"char[200]")
@@ -55,7 +55,7 @@ EndFunc
 
 Func SetName($_StrName) ;This one is also probably gonna need an update with next steam update!
 	$Level1Ptr = NtReadVirtualMemory($pHandle, $pmHandle + Find(),"int")
-	$Level2Ptr = NtReadVirtualMemory($pHandle, $Level1Ptr + 0x58C,"int") ;old offset was 4FC, 52C, 55C now it's 58C
+	$Level2Ptr = NtReadVirtualMemory($pHandle, $Level1Ptr + 0x61C,"int") ;old offset was 4FC, 52C, 55C ... now it's 61C
 	$Level3Ptr = NtReadVirtualMemory($pHandle, $Level2Ptr + 0x0,"int")
 	$Level4Ptr = NtReadVirtualMemory($pHandle, $Level3Ptr + 0x28,"int")
 	NtWriteVirtualMemory($pHandle, $Level4Ptr + 0x0, $_StrName,"char[200]")
